@@ -9,28 +9,24 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link to="/" class="a_style">Home</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
+            <router-link to="/posts" class="a_style">Posts</router-link>
+          </li >
         </ul>
       </div>
     </div>
   </nav>
 
-  <Post v-for="(post, i) in posts" :key="i" :post="post" />
+  <!--  <Post v-for="(post, i) in posts" :key="i" :post="post" />
+  router 를 사용하는 것으로 변경
+  -->
+  <router-view :posts="posts" />
 
 </template>
 
 <script>
-import Post from './components/Post.vue'
 import posts from './assets/posts.js'
 
 export default {
@@ -41,7 +37,6 @@ export default {
     }
   },
   components: {
-    Post: Post,
   }
 }
 </script>
@@ -54,4 +49,10 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+.a_style {
+  text-decoration: none;
+  color: black;
+}
+
 </style>

@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <p>{{post.number}}</p>
-    <h5>{{post.title}}</h5>
+  <div v-for="(post, i) in posts" :key="i">
+    <h5>{{post.number + 1}}. {{post.title}}</h5>
     <p>{{post.content}}</p>
     <p>{{post.date}}</p>
   </div>
@@ -10,9 +9,9 @@
 <script>
 
 export default {
-  name: "Post",
+  name: "Posts",
   props: {
-    post: Array,
+    posts: Array,
   },
 }
 </script>
