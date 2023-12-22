@@ -9,10 +9,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <router-link to="/" class="a_style">Home</router-link>
+              <router-link class="a_style m-1" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/posts" class="a_style">Posts</router-link>
+              <router-link class="a_style m-1" to="/posts">Posts</router-link>
           </li >
         </ul>
       </div>
@@ -22,7 +22,9 @@
   <!--  <Post v-for="(post, i) in posts" :key="i" :post="post" />
   router 를 사용하는 것으로 변경
   -->
-  <router-view :posts="posts" />
+  <router-view
+      :posts="posts"
+  />
 
 </template>
 
@@ -36,8 +38,6 @@ export default {
       posts: posts,
     }
   },
-  components: {
-  }
 }
 </script>
 
